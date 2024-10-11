@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Dropdown from '@/components/Dropdown.vue'; // Adjust the path according to your project structure
+import Dropdown from '../../components/DropDown.vue';
 
 const loading = ref(false);
 const bannerUrl = ref('');
