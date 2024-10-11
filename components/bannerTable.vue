@@ -9,7 +9,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { ref } from 'vue';
-import Modal from '~/components/Modal.vue';
+import Modal from '~/components/bannerModal.vue';
 
 const isModalOpen = ref(false);
 const selectedBanner = ref({ id: 1, status: 'Active', url: 'www.bmbastha.com' });
