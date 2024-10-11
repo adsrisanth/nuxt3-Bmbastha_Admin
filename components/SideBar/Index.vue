@@ -32,7 +32,7 @@ onMounted(() => {
 <template>
   <div class="flex h-screen">
     <div class="w-20 bg-gray-950 h-full">
-      <img src="../../assets/images/Logo.svg" class="lg:p-5 w-full bg-gray-900" alt="Logo" />
+      <img src="../../assets/images/Bm.svg" class="lg:p-5 w-full bg-gray-900" alt="Logo" />
         <img
         src="../../assets/images/Categories.svg"
         @click="toggleCategoriesTab"

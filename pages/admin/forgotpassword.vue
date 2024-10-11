@@ -3,7 +3,7 @@
         <div class="vvsm:w-full vvsm:p-5 lg:p-20 lg:w-[500px] bg-[#001802] h-full flex flex-col justify-between">
             <div class="flex flex-row gap gap-2">
                 <div class="w-16">
-                    <img src="../../assets/images/logo.svg" alt="">
+                    <img src="../../assets/images/Bm.svg" alt="">
                 </div>
                 <div class="font-poppins text-3xl font-bol py-4 flex justify-center h-full">
                     <span>BmBastha</span>

@@ -9,7 +9,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { ref } from 'vue';
-import Modal from '@/components/ui/Modal.vue';
+import Modal from '~/components/Modal.vue';
 
 const isModalOpen = ref(false);
 const selectedBanner = ref({ id: 1, status: 'Active', url: 'www.bmbastha.com' });
@@ -22,10 +22,9 @@ const closeModal = () => {
   isModalOpen.value = false;
 };
 
-// New method to handle save
 const handleSave = (updatedBanner) => {
-  console.log('Updated Banner:', updatedBanner); // Log updated banner details
-  selectedBanner.value = { ...selectedBanner.value, ...updatedBanner }; // Update the selectedBanner state
+  console.log('Updated Banner:', updatedBanner);
+  selectedBanner.value = { ...selectedBanner.value, ...updatedBanner }; 
 };
 </script>
 
