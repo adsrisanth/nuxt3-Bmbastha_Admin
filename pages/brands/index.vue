@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Dropdown from '../../components/DropDown.vue';
+import Dropdown from '../../components/activeCase.vue';
 
 const loading = ref(false);
 const bannerUrl = ref('');
