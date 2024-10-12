@@ -41,6 +41,7 @@
           </div>
         </form>
       </div>
+      <itemsTable />
     </div>
   </template>
   

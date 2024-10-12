@@ -2,8 +2,8 @@
   <div class="h-screen bg-slate-900 p-8">
     <div class="flex justify-between">
       <div class="flex flex-row text-white items-center gap gap-2">
-        <div class="bg-slate-800 rounded-full p-4">
-          <Icon size="35" name="game-icons:vertical-banner" />
+        <div class="bg-slate-800 rounded-full p-4 flex">
+          <Icon size="35" name="simple-icons:brandfolder" />
         </div>
         <div class="flex flex-col gap gap-[1px]">
           <span class="text-sm">Main</span>
@@ -43,6 +43,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Dropdown from '../../components/activeCase.vue';
+
 
 const loading = ref(false);
 const bannerUrl = ref('');

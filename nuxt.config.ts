@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt','nuxt-icon'],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt','nuxt-icon','@samk-dev/nuxt-vcalendar'],
   shadcn: {
     /**
      * Prefix for all the imported component

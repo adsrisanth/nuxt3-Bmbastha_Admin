@@ -2,7 +2,7 @@
     <div class="h-screen bg-slate-900 p-8">
       <div class="flex justify-between">
         <div class="flex flex-row text-white items-center gap gap-2">
-          <div class="bg-slate-800 rounded-full p-4">
+          <div class="bg-slate-800 rounded-full p-4 flex">
             <Icon size="35" name="game-icons:vertical-banner" />
           </div>
           <div class="flex flex-col gap gap-[1px]">
@@ -18,7 +18,7 @@
         <div class=" h-[90px] text-slate-200">
           <div class="p-4 gap-3 flex flex-col">
             <span class="text-[20px] font-inter">Banner - URL</span>
-            <div class="border w-[450px] border-slate-500 hover:shadow-sm rounded-md hover:border-slate-300 hover:shadow-blue-600 p-5">
+            <div class="border w-[450px] border-slate-500 hover:shadow-sm rounded-md hover:border-slate-300 hover:shadow-green-600 p-5">
               <input
                 type="text"
                 v-model="bannerUrl"
