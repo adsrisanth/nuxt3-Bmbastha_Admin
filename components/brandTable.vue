@@ -29,7 +29,7 @@ const handleSave = (updatedbrand) => {
 </script>
 
 <template>
-  <Table class="mt-10">
+  <Table class="mt-10 text-green-800">
     <TableCaption>A list of Brands.</TableCaption>
     <TableHeader>
       <TableRow>

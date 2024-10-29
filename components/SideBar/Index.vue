@@ -7,49 +7,68 @@ const route = useRoute();
 const open = ref(true);
 const name = "Bmbastha";
 
-const isCategoriesTabOpen = ref(false);
+// Set Overview tab to open by default
+const isOverVIewTabOpen = ref(true);
+const isHomeTabOpen = ref(false);
 const isProfileTabOpen = ref(false);
 
-const toggleCategoriesTab = () => {
-  isCategoriesTabOpen.value = true;
+const toggleOverVIewTab = () => {
+  isOverVIewTabOpen.value = true;
+  isHomeTabOpen.value = false;
+  isProfileTabOpen.value = false;
+};
+
+const toggleHomeTab = () => {
+  isHomeTabOpen.value = true;
+  isOverVIewTabOpen.value = false;
   isProfileTabOpen.value = false;
 };
 
 const toggleProfileTab = () => {
+  isHomeTabOpen.value = false;
+  isOverVIewTabOpen.value = false;
   isProfileTabOpen.value = true;
-  isCategoriesTabOpen.value = false;
 };
 
 onMounted(() => {
-  if (route.path.startsWith("/banners") || route.path.startsWith("/brands") || route.path.startsWith("/items")) {
-    toggleProfileTab();
+  if (route.path.startsWith("/banners") || route.path.startsWith("/brands") || route.path.startsWith("/items") || route.path.startsWith("/layers")){
+    toggleHomeTab();
+  } else if (route.path.startsWith("/OverVIew")) {
+    toggleOverVIewTab();
   } else {
-    toggleCategoriesTab();
+    toggleProfileTab();
   }
 });
 </script>
 
 <template>
   <div class="flex h-screen">
-    <div class="w-20 bg-gray-950 h-full">
-      <img src="../../assets/images/Bm.svg" class="lg:p-5 w-full bg-gray-900" alt="Logo" />
+    <div class="w-20 bg-green-900 h-full">
+      <img src="../../assets/images/Bm.svg" class="lg:p-5 w-full bg-green-700" alt="Logo" />
         <img
-        src="../../assets/images/Categories.svg"
-        @click="toggleCategoriesTab"
+        src="../../assets/images/Overview.svg"
+        @click="toggleOverVIewTab"
         class="cursor-pointer lg:p-5 transition-colors duration-300"
-        :class="isCategoriesTabOpen ? 'bg-gray-800' : 'bg-transparent'"
-        alt="Categories"
+        :class="isOverVIewTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
+        alt="OverVIew"
       />
       <img
-        src="../../assets/images/Profile.svg"
+        src="../../assets/images/Home.svg"
+        @click="toggleHomeTab"
+        class="cursor-pointer lg:p-6 transition-colors duration-300"
+        :class="isHomeTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
+        alt="Home"
+      />
+      <img
+        src="../../assets/images/PROFILE.svg"
         @click="toggleProfileTab"
         class="cursor-pointer lg:p-6 transition-colors duration-300"
-        :class="isProfileTabOpen ? 'bg-gray-800' : 'bg-transparent'"
-        alt="Profile"
+        :class="isProfileTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
+        alt="Home"
       />
     </div>
     <div class="w-[250px] h-full">
-      <SideBarMenu :isCategoriesTabOpen="isCategoriesTabOpen" :isProfileTabOpen="isProfileTabOpen" />
+      <SideBarMenu :isOverVIewTabOpen="isOverVIewTabOpen" :isHomeTabOpen="isHomeTabOpen" :isProfileTabOpen="isProfileTabOpen"/>
     </div>
   </div>
 </template>

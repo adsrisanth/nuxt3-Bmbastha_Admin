@@ -29,7 +29,7 @@ const handleSave = (updatedBanner) => {
 </script>
 
 <template>
-  <Table class="mt-10">
+  <Table class="mt-10 text-green-800 hover:bg-slate-200">
     <TableCaption>A list of Banners.</TableCaption>
     <TableHeader>
       <TableRow>
@@ -45,7 +45,7 @@ const handleSave = (updatedBanner) => {
         <TableCell>{{ selectedBanner.status }}</TableCell>
         <TableCell>{{ selectedBanner.url }}</TableCell>
         <TableCell>
-          <Button @click="openModal" class="bg-slate-800 py-5 text-[12px] px-7 m-5">Edit</Button>
+          <Button @click="openModal" class="bg-green-800 py-5 text-[12px] px-7 m-5">Edit</Button>
         </TableCell>
       </TableRow>
     </TableBody>
