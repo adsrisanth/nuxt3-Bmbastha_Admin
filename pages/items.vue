@@ -123,39 +123,39 @@ const handleCategoriesLinkageChange = (e) => {
 </script>
 
 <template>
-  <div class="h-screen overflow-y-auto bg-slate-900 p-8">
+  <div class="h-screen overflow-y-auto bg-slate-100 p-8">
     <div class="flex justify-between mb-6">
       <div class="flex flex-row text-white items-center gap-2">
-        <div class="bg-slate-800 rounded-full p-4 flex">
+        <div class="bg-green-900 rounded-full p-4 flex">
           <Icon size="35" name="mdi:invoice-line-items-outline"/>
         </div>
-        <div class="flex flex-col gap-[1px]">
+        <div class="text-green-800 flex flex-col gap-[1px]">
           <span class="text-sm">Main</span>
           <span class="text-[24px] font-inter">Items</span>
         </div>
       </div>
-      <div @click="handleSubmit" class="bg-slate-300 p-4 rounded-full flex items-center w-16 h-16 hover:bg-slate-400 duration-500 cursor-pointer">
-        <Correct />
-      </div>
+      <div class="bg-green-300 border border-green-800 p-4 rounded-full flex items-center w-16 h-16 hover:bg-green-400 duration-500 cursor-pointer">
+          <Correct />
+        </div>
     </div>
-    <form @submit.prevent="handleSubmit" class=" justify-between grid grid-cols-3 gap-5 p-8 text-white">
+    <form @submit.prevent="handleSubmit" class=" justify-between grid grid-cols-3 gap-5 p-8 text-green-800">
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Item ID</label>
         <input v-model="itemId" @input="handleItemIdChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[450px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Item ID" />
       </div>
       
       <div class="flex flex-col gap gap-3">
-        <label class="text-[20px] font-inter">Item Logo</label>
+        <label class="text-[20px] font-inter">Item Logo URL</label>
         <input 
           type="file" 
           @change="handleFileChange" 
           @focus="isFileFocused = true" 
           @blur="isFileFocused = false"
           :class="[
-            'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+            'border border-green-800 rounded-md bg-green-800 p-5 w-[420px] h-[50px]', 
             isFileFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600'
           ]" 
         />
