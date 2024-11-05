@@ -46,7 +46,7 @@ onMounted(() => {
     <div class="w-20 bg-green-900 h-full">
       <img src="../../assets/images/Bm.svg" class="lg:p-5 w-full bg-green-700" alt="Logo" />
         <img
-        src="../../assets/images/Overview.svg"
+        src="../../assets/images/overview.svg"
         @click="toggleOverVIewTab"
         class="cursor-pointer lg:p-5 transition-colors duration-300"
         :class="isOverVIewTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
