@@ -53,14 +53,14 @@ onMounted(() => {
         alt="OverVIew"
       />
       <img
-        src="../../assets/images/Home.svg"
+        src="../../assets/images/home.svg"
         @click="toggleHomeTab"
         class="cursor-pointer lg:p-6 transition-colors duration-300"
         :class="isHomeTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
         alt="Home"
       />
       <img
-        src="../../assets/images/PROFILE.svg"
+        src="../../assets/images/Profile.svg"
         @click="toggleProfileTab"
         class="cursor-pointer lg:p-6 transition-colors duration-300"
         :class="isProfileTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
