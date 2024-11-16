@@ -142,23 +142,17 @@ const handleCategoriesLinkageChange = (e) => {
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Item ID</label>
         <input v-model="itemId" @input="handleItemIdChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[450px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Item ID" />
       </div>
       
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Item Logo URL</label>
-        <input 
-          type="file" 
-          @change="handleFileChange" 
-          @focus="isFileFocused = true" 
-          @blur="isFileFocused = false"
-          :class="[
-            'border border-green-800 rounded-md bg-green-800 p-5 w-[420px] h-[50px]', 
-            isFileFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600'
-          ]" 
-        />
+        <input @input="handleFileChange" @focus="isFileFocused = true" @blur="isFileFocused = false" :class="[
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
+        isFileFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
+        placeholder="Logo URL" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Item Tags</label>
@@ -168,8 +162,8 @@ const handleCategoriesLinkageChange = (e) => {
           @focus="isTagsFocused = true" 
           @blur="isTagsFocused = false"
           :class="[
-            'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
-            isTagsFocused ? 'shadow-lg  shadow-green-600' : 'hover:shadow-sm  hover:shadow-green-600'
+            'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
+            isTagsFocused ? 'shadow-sm  shadow-green-600' : 'hover:shadow-sm  hover:shadow-green-600'
           ]" 
           placeholder="Comma-separated tags" 
         />
@@ -183,7 +177,7 @@ const handleCategoriesLinkageChange = (e) => {
           @focus="isPriceFocused = true" 
           @blur="isPriceFocused = false"
           :class="[
-            'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+            'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
             isPriceFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600'
           ]" 
           placeholder="Price" 
@@ -198,7 +192,7 @@ const handleCategoriesLinkageChange = (e) => {
           @focus="isDiscountFocused = true" 
           @blur="isDiscountFocused = false"
           :class="[
-            'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+            'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
             isDiscountFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600'
           ]" 
           placeholder="Discount" 
@@ -206,11 +200,11 @@ const handleCategoriesLinkageChange = (e) => {
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Manufacturing Date</label>
-        <input type="date" v-model="maniDate" @input="handleManiDateChange" class="border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]" />
+        <input type="date" v-model="maniDate" @input="handleManiDateChange" class="border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Expiry Date</label>
-        <input type="date" v-model="expiryDate" @input="handleExpiryDateChange" class="border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]" />
+        <input type="date" v-model="expiryDate" @input="handleExpiryDateChange" class="border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Net Weight</label>
@@ -221,7 +215,7 @@ const handleCategoriesLinkageChange = (e) => {
           @focus="isWeightFocused = true" 
           @blur="isWeightFocused = false"
           :class="[
-            'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+            'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
             isWeightFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600'
           ]" 
           placeholder="Net Weight" 
@@ -236,7 +230,7 @@ const handleCategoriesLinkageChange = (e) => {
           @focus="isNoPiecesFocused = true" 
           @blur="isNoPiecesFocused = false"
           :class="[
-            'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+            'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
             isNoPiecesFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600'
           ]" 
           placeholder="No. of Pieces" 
@@ -245,50 +239,50 @@ const handleCategoriesLinkageChange = (e) => {
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Model Name</label>
         <input v-model="modelName" @input="handleModelNameChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Model Name" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Type</label>
         <input v-model="itemType" @input="handleItemTypeChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Type" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Pack</label>
         <input v-model="pack" @input="handlePackChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Pack" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Description</label>
-        <textarea v-model="description" @input="handleDescriptionChange" class="w-[420px] h-[50px] border border-slate-500 rounded-md bg-slate-900 p-5" placeholder="Description"></textarea>
+        <textarea v-model="description" @input="handleDescriptionChange" class="border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]" placeholder="Description"></textarea>
       </div>
       <div class="flex flex-col gap gap-3">
-        <label for="status" class="block text-slate-200 text-[20px] font-inter">Status:</label>
-        <ActiveCase :statuses="['Active', 'Inactive']" v-model="status" />
+        <label for="status" class="block text-green-800 text-[20px] font-inter">Status:</label>
+        <ActiveCaseItems :statuses="['Active', 'Inactive']" v-model="status" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Seller ID</label>
         <input v-model="sellerId" @input="handleSellerIdChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Seller ID" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Brand Linkage</label>
         <input v-model="brandLinkage" @input="handleBrandLinkageChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Brand Linkage" />
       </div>
       <div class="flex flex-col gap gap-3">
         <label class="text-[20px] font-inter">Categories Linkage</label>
         <input v-model="categoriesLinkage" @input="handleCategoriesLinkageChange" @focus="isFocused = true" @blur="isFocused = false" :class="[
-        'border border-slate-500 rounded-md bg-slate-900 p-5 w-[420px] h-[50px]', 
+        'border border-green-800 hover:border-green-500 rounded-md bg-slate-100 p-5 w-[420px] h-[50px]', 
         isFocused ? 'shadow-sm shadow-green-600' : 'hover:shadow-sm hover:shadow-green-600']"
         placeholder="Categories Linkage" />
       </div>

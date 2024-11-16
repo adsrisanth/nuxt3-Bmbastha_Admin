@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-[450px]">
+  <div class="relative max-w-[450px]">
     <div
       class="border bg-green-900 text-slate-300 h-[50px] rounded p-5 cursor-pointer"
       @click="toggleDropdown"

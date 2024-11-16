@@ -68,7 +68,7 @@ const handleSave = (item) => {
 </script>
 
 <template>
-  <div @click="openModal" class="bg-slate-800 text-white px-4 py-2">Add New Item</div>
+  <div @click="openModal" class="bg-green-800 text-white px-4 py-2">Add New Item</div>
   <table class="min-w-full bg-white mt-5">
     <thead>
       <tr>
@@ -112,7 +112,7 @@ const handleSave = (item) => {
         <td>{{ item.brandLinkage }}</td>
         <td>{{ item.categoriesLinkage }}</td>
         <td>
-          <button @click="openModal(item)" class="bg-slate-800 text-white px-4 py-2">Edit</button>
+          <button @click="openModal(item)" class="bg-green-800 hover:bg-green-950 duration-300 rounded-md text-white px-4 py-2">Edit</button>
         </td>
       </tr>
     </tbody>
