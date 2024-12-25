@@ -45,7 +45,12 @@ const profile = ref([
   {
     title: "Promotional",
     path: "/promotion",
-    icon: "material-symbols:dashboard-outline",
+    icon: "gis:earth-network",
+  },
+  {
+    title: "Help Center",
+    path: "/helpcenter",
+    icon: "humbleicons:aid",
   },
 ]);
 </script>

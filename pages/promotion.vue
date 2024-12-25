@@ -3,7 +3,7 @@
       <div class="flex justify-between">
         <div class="flex flex-row text-green-800 items-center gap gap-2">
           <div class="bg-green-900 rounded-full text-white p-4 flex">
-            <Icon size="35" name="game-icons:vertical-banner" />
+            <Icon size="35" name="gis:earth-network" />
           </div>
           <div class="flex flex-col gap gap-[1px]">
             <span class="text-sm">Main</span>
