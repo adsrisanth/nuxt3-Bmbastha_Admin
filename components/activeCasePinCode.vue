@@ -1,13 +1,16 @@
 <template>
-    <div class="relative max-w-[350px]">
+    <div class="relative w-[350px]">
       <div
-        class="border bg-green-900 text-slate-300 h-[50px] rounded p-5 cursor-pointer"
+        class="border bg-slate-100 text-slate-700 border-green-800 h-[50px] rounded p-5 cursor-pointer"
         @click="toggleDropdown"
-        :class="{'bg-green-800': isDropdownOpen}"
+        :class="{'bg-slate-100': isDropdownOpen, 'border-green-700': isFocused, 'bg-green-100': isFocused}"
+        @focus="isFocused = true"
+        @blur="isFocused = false"
+        tabindex="0"
       >
         {{ selectedStatus }} <span class="float-right">▼</span>
       </div>
-      <ul v-if="isDropdownOpen" class="absolute z-10 w-full bg-green-700 border border-green-700 text-white rounded shadow-lg">
+      <ul v-if="isDropdownOpen" class="absolute z-10 w-full bg-slate-100 border border-green-700 text-gray-950 rounded shadow-lg">
         <li
           v-for="status in statuses"
           :key="status"
@@ -21,7 +24,7 @@
   </template>
   
   <script setup lang="ts">
-  import { ref, defineProps, emit } from 'vue';
+  import { ref, defineProps, defineEmits } from 'vue';
   
   const props = defineProps({
     statuses: {
@@ -37,6 +40,7 @@
   const emit = defineEmits(['update:modelValue']);
   const isDropdownOpen = ref(false);
   const selectedStatus = ref(props.modelValue || 'Select Status');
+  const isFocused = ref(false);
   
   const toggleDropdown = () => {
     isDropdownOpen.value = !isDropdownOpen.value;

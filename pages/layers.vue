@@ -17,11 +17,11 @@
             />
           </div>
         </div>
-          <div class="bg-green-300 border border-green-800 p-4 rounded-full flex items-center w-16 h-16 hover:bg-green-400 duration-500 cursor-pointer">
+        <div class="bg-green-300 border border-green-800 p-4 rounded-full flex items-center w-16 h-16 hover:bg-green-400 duration-500 cursor-pointer">
           <Correct />
         </div>
       </div>
-        <div class="p-8 grid gap gap-5 grid-cols-2 justify-center">
+      <div class="p-8 grid gap gap-5 grid-cols-2 justify-center">
         <div class="h-[90px] text-green-900">
           <div class="p-4 gap-3 flex flex-col">
             <span class="text-[20px] font-inter">Logo ID</span>
@@ -36,7 +36,7 @@
             </div>
           </div>
         </div>
-          <div class="p-4 flex flex-col gap-3">
+        <div class="p-4 flex flex-col gap-3">
           <label for="status" class="block w-[450px] text-green-900 text-[20px] font-inter">Status:</label>
           <ActiveCase :statuses="['Active', 'Inactive']" v-model="status" />
         </div>
@@ -58,7 +58,7 @@
             aria-label="Inner Stroke Color"
           />
         </div>
-          <div class="p-4 text-green-900 flex flex-col gap-3">
+        <div class="p-4 text-green-900 flex flex-col gap-3">
           <span class="text-[20px] font-inter">Inner Background Color</span>
           <input
             type="color"
@@ -68,16 +68,26 @@
           />
         </div>
         <div class="p-4 flex flex-col gap gap-3">
-        <label for="axisStyle" class="block mt-4 w-[450px] text-green-900 text-[20px] font-inter">Axis Style:</label>
-        <ActiveCase :statuses="['Solid', 'Dashed','Dotted']" v-model="axisStyle " />
+          <label for="axisStyle" class="block mt-4 w-[450px] text-green-900 text-[20px] font-inter">Axis Style:</label>
+          <ActiveCase :statuses="['Solid', 'Dashed','Dotted']" v-model="axisStyle " />
+        </div>
+        <div class="p-4 text-green-900 flex flex-col gap-3">
+          <span class="text-[20px] font-inter">Pin Code</span>
+          <input
+            type="text"
+            v-model="pinCode"
+            placeholder="Enter Pin Code"
+            class="pl-2 pr-2 pt-1 pb-1 w-[450px] h-[50px] border border-green-800 rounded bg-transparent outline-none"
+            aria-label="Pin Code"
+          />
+        </div>
       </div>
-      </div>
-        <div class="pb-10 text-slate-300">
+      <div class="pb-10 text-slate-300">
         <brandTable />
       </div>
     </div>
   </template>
-  
+
   <script setup lang="ts">  
   const loading = ref(false);
   const logoId = ref('');
@@ -87,8 +97,9 @@
   const innerStrokeColor = ref('#135700');
   const innerBgColor = ref('#135700');
   const axisStyle = ref('Solid');
+  const pinCode = ref('');
   </script>
-  
+
   <style scoped>
   .layer-bg {
     background-color: var(--bg-color);
@@ -101,4 +112,3 @@
     stroke-dasharray: var(--dash-array);
   }
   </style>
-    
