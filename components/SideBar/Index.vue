@@ -31,12 +31,14 @@ const toggleProfileTab = () => {
 };
 
 onMounted(() => {
-  if (route.path.startsWith("/banners") || route.path.startsWith("/brands") || route.path.startsWith("/items") || route.path.startsWith("/layers")){
+  if (route.path.startsWith("/banners") || route.path.startsWith("/brands") || route.path.startsWith("/items") || route.path.startsWith("/layers") ){
     toggleHomeTab();
   } else if (route.path.startsWith("/OverVIew")) {
     toggleOverVIewTab();
-  } else {
+  } else if (route.path.startsWith("/promotional") || route.path.startsWith("/helpcenter")){
     toggleProfileTab();
+  } else if (route.path.startsWith("/notifications")) {
+    toggleNotificationTab()
   }
 });
 </script>
@@ -66,9 +68,16 @@ onMounted(() => {
         :class="isProfileTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
         alt="Home"
       />
+      <img
+        src="../../assets/images/Profile.svg"
+        @click="toggleNotificationTab"
+        class="cursor-pointer lg:p-6 transition-colors duration-300"
+        :class="isNotificationTabOpen ? 'bg-[#159947]' : 'bg-transparent'"
+        alt="Home"
+      />
     </div>
     <div class="w-[250px] h-full">
-      <SideBarMenu :isOverVIewTabOpen="isOverVIewTabOpen" :isHomeTabOpen="isHomeTabOpen" :isProfileTabOpen="isProfileTabOpen"/>
+      <SideBarMenu :isOverVIewTabOpen="isOverVIewTabOpen" :isHomeTabOpen="isHomeTabOpen" :isProfileTabOpen="isProfileTabOpen" :isNotificationTabOpen="isNotificationTabOpen"/>
     </div>
   </div>
 </template>
