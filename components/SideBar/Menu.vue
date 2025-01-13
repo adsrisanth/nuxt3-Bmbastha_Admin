@@ -15,22 +15,22 @@ const route = useRoute();
 const items = ref([
   {
     title: "Banners",
-    path: "/banners",
+    path: "/admin/banners",
     icon: "game-icons:vertical-banner",
   },
   {
     title: "Brands",
-    path: "/brands",
+    path: "/admin/brands",
     icon: "simple-icons:brandfolder",
   },
   {
     title: "Items",
-    path: "/items",
+    path: "/admin/items",
     icon: "mdi:invoice-line-items-outline",
   },
   {
     title: "Layers",
-    path: "/layers",
+    path: "/admin/layers",
     icon: "material-symbols-light:layers",
   },
 ]);
@@ -38,7 +38,7 @@ const items = ref([
 const OverVIew = ref([
   {
     title: "OverView",
-    path: "/",
+    path: "/admin/charts",
     icon: "material-symbols:dashboard-outline",
   },
 ]);
@@ -46,12 +46,12 @@ const OverVIew = ref([
 const profile = ref([
   {
     title: "Promotional",
-    path: "/promotion",
+    path: "/admin/promotion",
     icon: "gis:earth-network",
   },
   {
     title: "Help Center",
-    path: "/helpcenter",
+    path: "/admin/helpcenter",
     icon: "humbleicons:aid",
   },
 ]);
@@ -59,7 +59,7 @@ const profile = ref([
 const notifications = ref([
   {
     title:"Notifications",
-    path:"/notifications",
+    path:"/admin/notifications",
     icon:"fa6-regular:bell",
   }
 ]);
@@ -67,7 +67,7 @@ const notifications = ref([
 const delivery = ref([
   {
     title:"Delivery",
-    path:"/delivery",
+    path:"/admin/deliveries",
     icon:"iconamoon:delivery-fast-bold",
   }
 ]);
@@ -80,7 +80,7 @@ const delivery = ref([
         <NuxtLink v-for="(category, index) in OverVIew" :key="index" :to="category.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-300 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-900 hover:bg-[#4da32a] duration-300 text-xl',
               route.path === category.path ? 'bg-[#4fc520]' : ''
             ]"
           >
@@ -95,7 +95,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in items" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-900 hover:bg-[#4da32a] duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
@@ -110,7 +110,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in profile" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-300 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-900 hover:bg-[#4da32a] duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
@@ -125,7 +125,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in notifications" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-900 hover:bg-[#4da32a] duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
@@ -140,7 +140,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in delivery" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-900 hover:bg-[#4da32a] duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >

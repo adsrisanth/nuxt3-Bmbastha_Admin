@@ -1,12 +1,17 @@
 <template>
   <div>
     <!-- Fixed Header -->
-    <header class="fixed top-0 left-0 w-full h-[70px] z-50 border-b-2 border-gray-400 bg-slate-50 flex items-center px-14">
-      <img src="../../assets/images/bmbastha-logo_PNG_bg.png" alt="Logo" class="h-20 mr-3">
-      <span class="text-gray-950 text-2xl font-poppins">BmBastha</span>
+    <header class="fixed top-0 left-0 w-full h-[70px] z-50 border-b-2 border-gray-400 bg-slate-50 flex px-14">
+      <div class="flex flex-row items-center">
+        <img src="../../assets/images/bmbastha-logo_PNG_bg.png" alt="Logo" class="h-20 mr-3">
+        <span class="text-gray-950 text-2xl font-poppins">BmBastha</span>
+      </div>
+      <div class="flex items-center">
+      <NuxtLink to="/admin/">
+          <span class="fixed top-5 right-5 duration-300 rounded-lg px-4 py-3 bg-red-500 hover:bg-red-600 text-gray-50">Log out</span>
+        </NuxtLink>
+        </div>
     </header>
-
-    <!-- Main Content -->
     <div class="flex pt-[70px] h-screen">
       <!-- Sidebar -->
       <div class="w-20 bg-[#4fc520] h-full">
@@ -114,15 +119,15 @@ const toggleDeliveryTab = () => {
 };
 
 onMounted(() => {
-  if (route.path.startsWith("/banners") || route.path.startsWith("/brands") || route.path.startsWith("/items") || route.path.startsWith("/layers")) {
+  if (route.path.startsWith("/admin/banners") || route.path.startsWith("/admin/brands") || route.path.startsWith("/admin/items") || route.path.startsWith("/layers")) {
     toggleHomeTab();
-  } else if (route.path.startsWith("/OverVIew")) {
+  } else if (route.path.startsWith("/admin/charts")) {
     toggleOverVIewTab();
-  } else if (route.path.startsWith("/promotional") || route.path.startsWith("/helpcenter")) {
+  } else if (route.path.startsWith("/admin/promotional") || route.path.startsWith("/admin/helpcenter")) {
     toggleProfileTab();
-  } else if (route.path.startsWith("/notifications")) {
+  } else if (route.path.startsWith("/admin/notifications")) {
     toggleNotificationTab();
-  } else if (route.path.startsWith("/delivery")) {
+  } else if (route.path.startsWith("/admin/delivery")) {
     toggleDeliveryTab();
   }
 });

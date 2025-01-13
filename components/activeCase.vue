@@ -1,13 +1,13 @@
 <template>
   <div class="relative w-[450px]">
     <div
-      class="border bg-green-900 text-slate-300 h-[50px] rounded p-5 cursor-pointer"
+      class="border bg-[#4fc520] text-slate-50 h-[50px] rounded p-5 cursor-pointer"
       @click="toggleDropdown"
       :class="{'bg-green-800': isDropdownOpen}"
     >
       {{ selectedStatus }} <span class="float-right">▼</span>
     </div>
-    <ul v-if="isDropdownOpen" class="absolute z-10 w-full bg-green-700 border border-green-700 text-white rounded shadow-lg">
+    <ul v-if="isDropdownOpen" class="absolute z-10 w-full bg-[#4fc520] text-gray-50 border border-green-700 rounded shadow-lg">
       <li
         v-for="status in statuses"
         :key="status"

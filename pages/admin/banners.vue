@@ -1,67 +1,67 @@
 <template>
-  <div class="h-screen bg-slate-100 overflow-y-auto p-8 pt-[80px]">
+  <div class="h-screen bg-slate-100 pt-[80px] overflow-y-auto p-8">
     <div class="flex justify-between">
-      <div class="flex flex-row text-green-800 items-center gap gap-2">
-        <div class="bg-green-900 rounded-full text-white p-4 flex">
-          <Icon size="35" name="simple-icons:brandfolder" />
+      <div class="flex flex-row text-[#] items-center gap gap-2">
+        <div class="bg-[#4fc520] rounded-full text-white p-4 flex">
+          <Icon size="35" name="game-icons:vertical-banner" />
         </div>
-        <div class="flex flex-col gap gap-[1px]">
+        <div class="flex flex-col gap gap-[1px] text-[#4fc520]">
           <span class="text-sm">Main</span>
-          <span class="text-[24px] font-inter">Brands</span>
+          <span class="text-[24px] font-inter">Banners</span>
         </div>
       </div>
       <div
-        class="bg-green-300 border border-green-800 p-4 rounded-full flex items-center w-16 h-16 hover:bg-green-400 duration-500 cursor-pointer"
-        @click="addBrand"
+        class="bg-green-300 border border-[#4fc520] p-4 rounded-full flex items-center w-16 h-16 hover:bg-green-400 duration-500 cursor-pointer"
+        @click="addBanner"
       >
         <Correct />
       </div>
     </div>
     <div class="p-8 flex flex-row justify-evenly">
-      <div class="h-[90px] text-green-900">
+      <div class="h-[90px] text-[#4fc520]">
         <div class="p-4 gap-3 flex flex-col">
-          <span class="text-[20px] font-inter">Brand - URL</span>
+          <span class="text-[20px] font-inter">Banner - URL</span>
           <div class="border w-[450px] border-green-800 hover:shadow-sm rounded-md hover:border-green-500 p-5">
             <input
               type="text"
-              v-model="brandUrl"
-              placeholder="Enter Brand URL"
-              class="w-full bg-transparent text-green-800 outline-none"
-              aria-label="Brand URL"
+              v-model="bannerUrl"
+              placeholder="Enter Banner URL"
+              class="w-full bg-transparent text-[#4fc520] outline-none"
+              aria-label="Banner URL"
             />
           </div>
         </div>
       </div>
       <div class="flex flex-col gap gap-3">
         <label for="status" class="block mt-4 w-[450px] text-green-900 text-[20px] font-inter">Status:</label>
-        <ActiveCase :statuses="['Active', 'Inactive']" v-model="status" />
+        <ActiveCase :statuses="['Active','Inactive']" v-model="status" />
       </div>
     </div>
     <div class="p-8">
       <table class="min-w-full bg-white rounded-lg border border-gray-300 shadow-md">
-        <thead class="bg-green-800 text-white">
+        <thead class="bg-[#4fc520] text-white">
           <tr>
             <th class="p-4 text-left">Sl. No.</th>
-            <th class="p-4 text-left">Brand URL</th>
+            <th class="p-4 text-left">Banner URL</th>
             <th class="p-4 text-left">Status</th>
             <th class="p-4 text-left">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(brand, index) in brands" :key="index">
+          <tr v-for="(banner, index) in banners" :key="index">
             <td class="p-4">{{ index + 1 }}</td> 
-            <td class="p-4">{{ brand.url }}</td>
-            <td class="p-4">{{ brand.status }}</td>
+            <td class="p-4">{{ banner.url }}</td>
+            <td class="p-4">{{ banner.status }}</td>
             <td class="p-4">
               <button
                 @click="openEditModal(index)"
-                class="text-white py-2 px-4 rounded-sm hover:bg-green-600 duration-300 bg-green-800 font-medium"
+                class="bg-[#4fc520] hover:bg-green-600 duration-300 text-slate-50 py-2 px-4 rounded-sm font-medium"
               >
                 Edit
               </button>
               <button
-                @click="deleteBrand(index)"
-                class="py-2 duration-300 hover:bg-red-500 px-4 bg-red-600 rounded-sm text-white font-medium ml-4"
+                @click="deleteBanner(index)"
+                class="bg-red-700 duration-300 px-4 py-2 text-slate-50 rounded-sm hover:bg-red-500 font-medium ml-4"
               >
                 Delete
               </button>
@@ -70,17 +70,16 @@
         </tbody>
       </table>
     </div>
-
     <div v-if="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div class="bg-white p-8 rounded-lg shadow-lg w-[500px]">
-        <h3 class="font-inter text-green-800 text-2xl mb-4">Edit Brand</h3>
+        <h3 class="text-2xl font-inter text-green-800 mb-4">Edit Banner</h3>
         <div class="flex flex-col gap-4">
           <div>
-            <label for="edit-url" class="text-lg text-green-800">Brand URL:</label>
+            <label for="edit-url" class="text-lg text-green-800">Banner URL:</label>
             <input
               id="edit-url"
               type="text"
-              v-model="editBrandUrl"
+              v-model="editBannerUrl"
               class="w-full bg-transparent border h-[65px] border-green-800 px-5 rounded-md"
             />
           </div>
@@ -92,13 +91,13 @@
         <div class="flex justify-end mt-4 gap-4">
           <button
             @click="closeModal"
-            class="bg-gray-300 px-4 py-2 rounded-md hover:bg-gray-400 duration-300"
+            class="bg-gray-300 px-4 py-2 rounded-md duration-300 hover:bg-gray-400"
           >
             Cancel
           </button>
           <button
             @click="saveChanges"
-            class="bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-600 duration-300"
+            class="bg-green-800 duration-300 text-white px-4 py-2 rounded-md hover:bg-green-600"
           >
             Save
           </button>
@@ -111,47 +110,42 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const brandUrl = ref('');
+const bannerUrl = ref('');
 const status = ref('Active');
-const brands = ref<{ url: string; status: string }[]>([]);
+const banners = ref<{ url: string; status: string }[]>([]);
 const showModal = ref(false);
-const editBrandUrl = ref('');
+const editBannerUrl = ref('');
 const editStatus = ref('Active');
 const editIndex = ref<number | null>(null);
-
-const addBrand = () => {
-  if (brandUrl.value.trim() !== '' && status.value) {
-    brands.value.push({ url: brandUrl.value, status: status.value });
-    brandUrl.value = '';
+const addBanner = () => {
+  if (bannerUrl.value.trim() !== '' && status.value) {
+    banners.value.push({ url: bannerUrl.value, status: status.value });
+    bannerUrl.value = '';
     status.value = 'Active';
   } else {
     alert('Please fill in both fields.');
   }
 };
-
 const openEditModal = (index: number) => {
-  const brandToEdit = brands.value[index];
-  editBrandUrl.value = brandToEdit.url;
-  editStatus.value = brandToEdit.status;
+  const bannerToEdit = banners.value[index];
+  editBannerUrl.value = bannerToEdit.url;
+  editStatus.value = bannerToEdit.status;
   editIndex.value = index;
   showModal.value = true;
 };
-
 const closeModal = () => {
   showModal.value = false;
-  editBrandUrl.value = '';
+  editBannerUrl.value = '';
   editStatus.value = 'Active';
 };
-
 const saveChanges = () => {
   if (editIndex.value !== null) {
-    brands.value[editIndex.value] = { url: editBrandUrl.value, status: editStatus.value };
+    banners.value[editIndex.value] = { url: editBannerUrl.value, status: editStatus.value };
     closeModal();
   }
 };
-
-const deleteBrand = (index: number) => {
-  brands.value.splice(index, 1);
+const deleteBanner = (index: number) => {
+  banners.value.splice(index, 1);
 };
 </script>
 
@@ -172,23 +166,7 @@ const deleteBrand = (index: number) => {
   width: 500px;
 }
 
-.bg-white {
-  background-color: white;
-}
-
 .shadow-lg {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  text-align: left;
-  padding: 12px 16px;
-}
-
 </style>
