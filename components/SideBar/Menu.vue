@@ -95,7 +95,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in items" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-800 duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
@@ -110,7 +110,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in profile" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-300 duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
@@ -125,7 +125,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in notifications" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-800 duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
@@ -140,7 +140,7 @@ const delivery = ref([
         <NuxtLink v-for="(item, index) in delivery" :key="index" :to="item.path">
           <div
             :class="[
-              'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-green-950 hover:bg-green-800 duration-300 text-xl',
               route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >

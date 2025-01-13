@@ -52,7 +52,7 @@
         </thead>
         <tbody>
           <tr v-for="(gif, index) in gifList" :key="index" class="border-b">
-            <td class="p-2">{{ gif.gifID }}</td>
+            <td class="p-2"><span>{{ gif.gifID }}</span></td>
             <td class="p-2">
               <img :src="gif.gifURL" alt="GIF" class="w-16 h-16 object-cover" />
             </td>

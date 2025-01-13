@@ -21,11 +21,11 @@
           new Chart(ctx, {
             type: "bar",
             data: {
-              labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Satursday","Sunday"],
               datasets: [
                 {
                   label: "Delivery",
-                  data: [12, 19, 3, 5, 2],
+                  data: [12, 9, 3, 5, 2, 11, 12],
                   backgroundColor: [
                     "rgba(255, 99, 132, 0.2)",
                     "rgba(54, 162, 235, 0.2)",

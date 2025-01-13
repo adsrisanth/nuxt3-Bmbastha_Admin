@@ -21,11 +21,11 @@
           new Chart(ctx, {
             type: "doughnut",
             data: {
-              labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              labels: ["Brand 1", "Brand 2", "Brand 3", "Brand 4"],
               datasets: [
                 {
                   label: "Orders",
-                  data: [12, 19, 3, 5, 2],
+                  data: [12, 19, 3, 5],
                   backgroundColor: [
                     "rgba(255, 99, 132, 0.2)",
                     "rgba(54, 162, 235, 0.2)",
