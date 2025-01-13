@@ -10,6 +10,9 @@ module.exports = {
     container: {
       center: true,
       padding: "2rem",
+      extend: {
+        backgroundColor: ['hover'],
+      },
     },
     extend: {
       colors: {

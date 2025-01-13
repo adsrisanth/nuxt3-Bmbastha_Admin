@@ -32,7 +32,7 @@
                             />
                         </div>
                     </div>
-                    <div class="text-[#001802] font-bold text-xl vvsm:w-[280px] lg:w-[340px]">
+                    <div class="text-[#001802] font-bold text-md h-20 vvsm:w-[280px] lg:w-[340px]">
                         <div class="flex flex-row justify-between">
                             <div class="px-10 py-5 rounded-lg hover:bg-[#164414] duration-200 bg-[#1f801a]">
                                 <NuxtLink to="/"><span>SignIn</span></NuxtLink>

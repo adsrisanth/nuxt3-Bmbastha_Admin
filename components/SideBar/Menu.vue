@@ -6,6 +6,8 @@ const props = defineProps({
   isOverVIewTabOpen: Boolean,
   isHomeTabOpen: Boolean,
   isProfileTabOpen : Boolean,
+  isNotificationTabOpen : Boolean,
+  isDeliveryTabOpen : Boolean,
 });
 
 const route = useRoute();
@@ -54,27 +56,32 @@ const profile = ref([
   },
 ]);
 
-const notification = ref([
+const notifications = ref([
   {
-    title:"",
+    title:"Notifications",
     path:"/notifications",
     icon:"fa6-regular:bell",
+  }
+]);
+
+const delivery = ref([
+  {
+    title:"Delivery",
+    path:"/delivery",
+    icon:"iconamoon:delivery-fast-bold",
   }
 ]);
 </script>
 
 <template>
   <div class="w-full h-full">
-    <div v-if="props.isOverVIewTabOpen" class="bg-[#159947] h-full transition-all duration-300">
-      <div class="font-oswald text-gray-300 text-xl h-20 bg-green-900 flex p-5 items-center text-center overflow-hidden">
-        <span class="truncate">BmBastha</span>
-      </div>
+    <div v-if="props.isOverVIewTabOpen" class="bg-[#91D477] h-full transition-all duration-300">
       <div class="p-4">
         <NuxtLink v-for="(category, index) in OverVIew" :key="index" :to="category.path">
           <div
             :class="[
               'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-300 hover:bg-green-800 duration-300 text-xl',
-              route.path === category.path ? 'bg-green-900' : ''
+              route.path === category.path ? 'bg-[#4fc520]' : ''
             ]"
           >
             <Icon size="20" :name="category.icon" color="white" class="mr-3" />
@@ -83,16 +90,13 @@ const notification = ref([
         </NuxtLink>
       </div>
     </div>
-    <div v-if="props.isHomeTabOpen" class="bg-[#159947] h-full transition-all duration-300">
-      <div class="font-oswald text-gray-200 text-xl h-20 bg-green-900 flex p-5 items-center text-center overflow-hidden">
-        <span class="truncate">BmBastha</span>
-      </div>
+    <div v-if="props.isHomeTabOpen" class="bg-[#91D477] h-full transition-all duration-300">
       <div class="p-4 flex flex-col gap-2">
         <NuxtLink v-for="(item, index) in items" :key="index" :to="item.path">
           <div
             :class="[
               'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
-              route.path === item.path ? 'bg-green-900' : ''
+              route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
             <Icon size="20" :name="item.icon" color="white" class="mr-3" />
@@ -101,16 +105,13 @@ const notification = ref([
         </NuxtLink>
       </div>
     </div>
-    <div v-if="props.isProfileTabOpen" class="bg-[#159947] h-full transition-all duration-300">
-      <div class="font-oswald text-gray-200 text-xl h-20 bg-green-900 flex p-5 items-center text-center overflow-hidden">
-        <span class="truncate">BmBastha</span>
-      </div>
+    <div v-if="props.isProfileTabOpen" class="bg-[#91D477] h-full transition-all duration-300">
       <div class="p-4 flex flex-col gap-2">
         <NuxtLink v-for="(item, index) in profile" :key="index" :to="item.path">
           <div
             :class="[
               'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
-              route.path === item.path ? 'bg-green-900' : ''
+              route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
             <Icon size="20" :name="item.icon" color="white" class="mr-3" />
@@ -119,16 +120,28 @@ const notification = ref([
         </NuxtLink>
       </div>
     </div>
-    <div v-if="props.isNotificationTabOpen" class="bg-[#159947] h-full transition-all duration-300">
-      <div class="font-oswald text-gray-200 text-xl h-20 bg-green-900 flex p-5 items-center text-center overflow-hidden">
-        <span class="truncate">BmBastha</span>
-      </div>
+    <div v-if="props.isNotificationTabOpen" class="bg-[#91D477] h-full transition-all duration-300">
       <div class="p-4 flex flex-col gap-2">
-        <NuxtLink v-for="(item, index) in profile" :key="index" :to="item.path">
+        <NuxtLink v-for="(item, index) in notifications" :key="index" :to="item.path">
           <div
             :class="[
               'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
-              route.path === item.path ? 'bg-green-900' : ''
+              route.path === item.path ? 'bg-[#4fc520]' : ''
+            ]"
+          >
+            <Icon size="20" :name="item.icon" color="white" class="mr-3" />
+            <span>{{ item.title }}</span>
+          </div>
+        </NuxtLink>
+      </div>
+    </div>
+    <div v-if="props.isDeliveryTabOpen" class="bg-[#91D477] h-full transition-all duration-300">
+      <div class="p-4 flex flex-col gap-2">
+        <NuxtLink v-for="(item, index) in delivery" :key="index" :to="item.path">
+          <div
+            :class="[
+              'flex items-center py-3 px-5 rounded-lg font-poppins text-gray-200 hover:bg-green-800 duration-300 text-xl',
+              route.path === item.path ? 'bg-[#4fc520]' : ''
             ]"
           >
             <Icon size="20" :name="item.icon" color="white" class="mr-3" />
