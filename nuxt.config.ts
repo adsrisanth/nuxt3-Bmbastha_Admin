@@ -1,5 +1,12 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt','nuxt-icon','@samk-dev/nuxt-vcalendar'],
+  plugins: [
+    // Make sure your plugin is properly listed here
+    '~/plugins/axios.js',
+  ],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt','nuxt-icon','@samk-dev/nuxt-vcalendar','@nuxtjs/axios'],
+  axios:{
+    baseURL:'http://localhost:3000'
+  },
   shadcn: {
     /**
      * Prefix for all the imported component
